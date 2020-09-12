@@ -13,13 +13,13 @@ This challenge focuses on using the new for ES6 `class` syntax.
 
 ### Task 1 - Set up Project
 
-1. Fork repo and add TL as collaborator on Github.
-1. Clone _your_ fork (not Lambda's repo by mistake!).
-1. `cd` into your newly cloned repository.
-1. Create a new branch by typing `git checkout -b <firstName-lastName>`.
-1. Install dependencies by typing `npm install`.
-1. Run tests by typing `npm run test:watch`.
-1. Work on your branch, push commits and create PR as usual.
+1. Fork repo and add TL as collaborator on Github. x
+1. Clone _your_ fork (not Lambda's repo by mistake!). x
+1. `cd` into your newly cloned repository. x
+1. Create a new branch by typing `git checkout -b <firstName-lastName>`. x
+1. Install dependencies by typing `npm install`. x
+1. Run tests by typing `npm run test:watch`. x
+1. Work on your branch, push commits and create PR as usual. x
 
 ### Task 2a - MVP
 
