@@ -47,19 +47,19 @@ class Person {
   constructor(name, age){
     this.name = name;
     this.age = age;
-    this.stomach = []
+    this.stomach = [];
   }
   eat(str){
     if (this.stomach.length < 10){
-      this.stomach.push(str)
-      return this.stomach
+      this.stomach.push(str);
+      return this.stomach;
     }
   }  
   poop(){
-    this.stomach = []
+    this.stomach = [];
   }
   toString(){
-    return `${this.name}, ${this.age}`
+    return `${this.name}, ${this.age}`;
   }
 
 }
@@ -94,11 +94,11 @@ class Car {
 
     if (distance <= (this.tank * this.milesPerGallon)) {
       this.odometer = distance + this.odometer;
-      this.tank = this.tank - (distance * (1 / this.milesPerGallon))
-      console.log(`${this.model} drove ${distance} miles. Its odometer is now at ${this.odometer} miles.`)
+      this.tank = this.tank - (distance * (1 / this.milesPerGallon));
+      console.log(`${this.model} drove ${distance} miles. Its odometer is now at ${this.odometer} miles.`);
     } else {
         this.tank = 0;       
-        console.log(`I ran out of fuel at ${this.odometer} miles!`)
+        console.log(`I ran out of fuel at ${this.odometer} miles!`);
         // console.log(`Tank is at ${this.tank}. I ran out of fuel at ${this.odometer} miles!`)
     }
   }
@@ -134,7 +134,7 @@ class Lambdasian {
     this.location = obj.location;
   }
   speak(){
-    return `Hello my name is ${this.name}, I am from ${this.location}.`
+    return `Hello my name is ${this.name}, I am from ${this.location}.`;
   }
 
 }
@@ -161,10 +161,10 @@ class Instructor extends Lambdasian {
     this.catchPhrase = obj.catchPhrase;
   }
   demo(str){
-    return `Today we are learning about ${str}`
+    return `Today we are learning about ${str}`;
   }
-  grade(obj, str){
-    return `${obj.name} receives a perfect score on ${str}`    
+  grade(obj, subject){
+    return `${obj.name} receives a perfect score on ${subject}`; 
   }
 }
 
@@ -191,13 +191,13 @@ class Student extends Lambdasian{
     this.favSubjects = obj.favSubjects;
   }
   listSubjects(){
-    return `Loving ${this.favSubjects}`
+    return `Loving ${this.favSubjects}`;
   }
   PRAssignment(str){
-    return `${this.name} has submitted a PR for ${str}`
+    return `${this.name} has submitted a PR for ${str}`;
   }
-  sprintChallenge(str){
-    return `${this.name} has begun sprint challenge on ${str}`
+  sprintChallenge(subject){
+    return `${this.name} has begun sprint challenge on ${subject}`;
   }
 
 }
@@ -215,7 +215,18 @@ class Student extends Lambdasian{
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
+class ProjectManager extends Instructor{
+  constructor(obj) {
+    super(obj);
+    this.gradClassName = obj.gradClassName;
+    this.favInstructor = obj.favInstructor;
+  }
+  standUp(channel){
+    return `${this.name} announces ${channel}, @channel standy times!`
+  }
+  debugsCode(obj, subject){
+    return `${obj.name} debugs ${this.name}'s code on ${subject}`
+  }
 
 }
 
