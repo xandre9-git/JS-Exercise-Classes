@@ -81,8 +81,39 @@ class Person {
 */
 
 class Car {
+  constructor(model, milesPerGallon) {
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
+  }
+  fill(gallons){
+    this.tank = gallons + this.tank;
+  }
+  drive(distance){
+
+    if (distance <= (this.tank * this.milesPerGallon)) {
+      this.odometer = distance + this.odometer;
+      this.tank = this.tank - (distance * (1 / this.milesPerGallon))
+      console.log(`${this.model} drove ${distance} miles. Its odometer is now at ${this.odometer} miles.`)
+    } else {
+        this.tank = 0;       
+        console.log(`I ran out of fuel at ${this.odometer} miles!`)
+        // console.log(`Tank is at ${this.tank}. I ran out of fuel at ${this.odometer} miles!`)
+    }
+  }
+
 
 }
+
+const myCar = new Car ('Subaru WRX', 35);
+console.log(myCar)
+myCar.fill(2);
+console.log(myCar)
+myCar.drive(20)
+console.log(myCar)
+myCar.drive(55)
+console.log(myCar)
 
 /*
   TASK 3
@@ -97,6 +128,14 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
+  constructor(obj){
+    this.name = obj.name;
+    this.age = obj.age;
+    this.location = obj.location;
+  }
+  speak(){
+    return `Hello my name is ${this.name}, I am from ${this.location}.`
+  }
 
 }
 
