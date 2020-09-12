@@ -97,8 +97,9 @@ class Car {
       this.tank = this.tank - (distance * (1 / this.milesPerGallon));
       console.log(`${this.model} drove ${distance} miles. Its odometer is now at ${this.odometer} miles.`);
     } else {
-        this.tank = 0;       
-        console.log(`I ran out of fuel at ${this.odometer} miles!`);
+        this.odometer = distance - (distance - (this.tank * this.milesPerGallon))
+        this.tank = 0       
+        return `I ran out of fuel at ${this.odometer} miles!`;
         // console.log(`Tank is at ${this.tank}. I ran out of fuel at ${this.odometer} miles!`)
     }
   }
