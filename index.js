@@ -21,6 +21,9 @@ class Airplane {
   }
 }
 
+// const a = new Airplane('Gulfstream 550')
+// console.log(a)
+
 /*
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -41,8 +44,27 @@ class Airplane {
 */
 
 class Person {
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
+    this.stomach = []
+  }
+  eat(str){
+    if (this.stomach.length < 10){
+      this.stomach.push(str)
+      return this.stomach
+    }
+  }  
+  poop(){
+    this.stomach = []
+  }
+  toString(){
+    return `${this.name}, ${this.age}`
+  }
 
 }
+
+
 
 /*
   TASK 2
